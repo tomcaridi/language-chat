@@ -7,27 +7,22 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <meta content='<%= user_signed_in? ? current_user.id : "" %>' name='user-id'/>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">
+
   <title>LangChat</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= stylesheet_link_tag '//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 	<p class="navbar-text pull-right">
 	<% if user_signed_in? %>
-	  Logged in as <strong><%= current_user.email %></strong>.
+	  Logged in as <strong><%= current_user.name %></strong>.
 	  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
 	  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
 	<% else %>
 	  <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
 	  <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
-	<% end %>
-	<% if notice %>
-	  <p class="alert alert-success"><%= notice %></p>
-	<% end %>
-	<% if alert %>
-	  <p class="alert alert-danger"><%= alert %></p>
 	<% end %>
 <div class="container">
   <% if alert %>
@@ -40,7 +35,7 @@
 
   <%= yield %>
 </div>
-<audio id="chatAudio"><source src="/sounds/notification.mp3" type="audio/mpeg"></audio>
+<!-- <audio id="chatAudio"><source src="/sounds/notification.mp3" type="audio/mpeg"></audio> -->
 </body>
 
 </html>

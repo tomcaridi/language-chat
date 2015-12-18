@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+gem 'pry'
+gem 'pry-byebug'
+
 gem 'private_pub'
 gem 'thin'
 gem 'devise'
