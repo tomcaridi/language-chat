@@ -84,7 +84,6 @@ html,body {
 	}
 
 	.start-chat-btn {
-		-webkit-appearance:none;
 		height: 30px;
 		width: 105px;
 		border-radius: 3px;
@@ -176,9 +175,9 @@ html,body {
 	border-radius: 3px;
 	border: 1px solid grey;
 	float: left;
+	-moz-appearance: none;
 	-webkit-appearance:none;
 }
-
 .send-btn {
 	width: 14.5%;
 	height: 45px;
@@ -187,6 +186,11 @@ html,body {
 	color: white;
 	text-align: center;
 	float: right;
+	-moz-appearance: none;
+	-webkit-appearance:none;
+	border: none;
+	font-family: 'Lato';
+	font-size: 1em;
 }
 
 .send {

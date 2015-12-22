@@ -1,0 +1,6 @@
+$(document).ready(function() {
+	console.log("hello")
+	$(".start-chat-btn").click(function() {
+		$(".appendchat").openchat("<%= escape_javascript(yield) %>");
+	});
+});
