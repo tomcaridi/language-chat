@@ -7,7 +7,7 @@
       <div class="user-list-wrapper">
         <div class="avatar"></div>
         <div class="username"><%= user.name %></div>
-        <div><%= link_to "Send Message", "#", class: "start-chat-btn", "data-sid" => current_user.id, "data-rip" => user.id %>
+        <div><%= link_to "Send Message", new_conversation_path, class: "start-chat-btn", "data-sid" => current_user.id, "data-rip" => user.id %>
         </div>
         <div class="clear"></div>
       </div>
@@ -35,4 +35,3 @@
       <% end %>
     </div>
 </div>
-

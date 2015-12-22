@@ -47,7 +47,7 @@
     display: flex;
 }
 
-.chatboxcontent .avatar {
+/*.chatboxcontent .avatar {
     width: 40px;
     position: relative;
 }
@@ -94,7 +94,7 @@
     border-right-color: transparent;
     border-top-color: transparent;
     box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-}
+}*/
 
 .chatboxmessagecontent {
     background: white;
@@ -108,7 +108,7 @@
     margin: 0 0 0.2rem 0;
     -ms-word-break: break-all;
 
-    /* Non standard for webkit */
+/*     Non standard for webkit */
     word-break: break-word;
 
     -webkit-hyphens: auto;
@@ -117,8 +117,7 @@
 }
 
 .chatboxmessagecontent time {
-    font-size: 9px;
-    color: #ccc;
+    font-weight: bold;
 }
 
 .chatboxinput {

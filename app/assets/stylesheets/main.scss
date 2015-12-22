@@ -1,6 +1,5 @@
 html,body {
 	width: 100%;
-	height: 100%;
 	margin: 0;
 	padding: 0;
 	background-color: #EDEDED;
@@ -23,12 +22,15 @@ html,body {
 		margin: 0px 10px;
 		padding-top: 20px;
 		color: white;
-		text-decoration: none;
 	}
  	li {
 		list-style: none;
 		display: inline-block;
 		margin: 0px 10px;
+	}
+	a {
+		text-decoration: none;
+		color: white;
 	}
 }
 
@@ -59,44 +61,46 @@ html,body {
 	-moz-border-radius: 0px;
 	-webkit-border-radius: 0px 0px 3px 3px;
 	border-radius: 0px 0px 3px 3px;
-}
+	.user-list-wrapper {
+		width: 100%;
+		height: 50px;
+		text-align: center;
+		margin-top: 10px;
+	}
 
-.user-list-wrapper {
-	width: 100%;
-	height: 50px;
-	text-align: center;
-	margin-top: 10px;
-}
+	.avatar {
+		height: 40px;
+		width: 40px;
+		background-color: grey;
+		margin-left: 15px;
+		border-radius: 3px;
+		float: left;
+	}
 
-.avatar {
-	height: 40px;
-	width: 40px;
-	background-color: grey;
-	margin-left: 15px;
-	border-radius: 3px;
-	float: left;
-}
+	.username {
+		float: left;
+		margin-top: 10px;
+		margin-left: 15px;
+	}
 
-.username {
-	float: left;
-	margin-top: 10px;
-	margin-left: 15px;
-}
+	.start-chat-btn {
+		-webkit-appearance:none;
+		height: 30px;
+		width: 105px;
+		border-radius: 3px;
+		background-color: #FC5645;
+		color: white;
+		float: right;
+		margin-right: 15px;
+		margin-top: 5px;
+		padding-top: 10px;
+		text-decoration: none;
+		font-size: 0.9em;
+	}
 
-.start-chat-btn {
-	height: 30px;
-	width: 120px;
-	border-radius: 3px;
-	background-color: #FC5645;
-	color: white;
-	float: right;
-	margin-right: 15px;
-	margin-top: 5px;
-	vertical-align: middle;
-}
-
-.start-open-chat {
-	padding-top: 4px;
+	.start-open-chat {
+		padding-top: 5px;
+	}
 }
 
 .chat-window {
@@ -172,6 +176,7 @@ html,body {
 	border-radius: 3px;
 	border: 1px solid grey;
 	float: left;
+	-webkit-appearance:none;
 }
 
 .send-btn {
@@ -189,6 +194,13 @@ html,body {
 }
 .clear {
 	clear:both;
+}
+
+.time {
+	font-size: 0.7em;
+	color: grey;
+	display: inline-block;
+	margin-left: 10px;
 }
 
 @media all and (max-width: 980px) {
@@ -237,6 +249,11 @@ html,body {
 }
 
 @media all and (max-width: 650px) {
+
+	#nav ul li #greeting {
+		display: none;
+	}
+
 	.left {
 		margin-top: 10px;
 		width: 100%;

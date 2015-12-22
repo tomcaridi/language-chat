@@ -1,13 +1,3 @@
-/**
- * Chat logic
- *
- * Most of the js functionality is inspired from anatgarg.com
- * jQuery tag Module from the tutorial
- * http://anantgarg.com/2009/05/13/gmail-facebook-style-jquery-chat/
- *
- */
-
-
 var chatboxFocus = new Array();
 var chatBoxes = new Array();
 
@@ -29,47 +19,12 @@ var ready = function () {
         },
 
         /**
-         * closes the chatbox by essentially hiding it from the page
-         *
-         * @param conversation_id
-         */
-
-        close: function (conversation_id) {
-            $('#chatbox_' + conversation_id).css('display', 'none');
-            chatBox.restructure();
-        },
-
-        /**
          * Plays a notification sound when a new chat message arrives
          */
 
         notify: function () {
             var audioplayer = $('#chatAudio')[0];
             audioplayer.play();
-        },
-
-        /**
-         * Handles 'smart layouts' of the chatboxes. Like when new chatboxes are
-         * added or removed from the view, it restructures them so that they appear
-         * neatly aligned on the page
-         */
-
-        restructure: function () {
-            align = 0;
-            for (x in chatBoxes) {
-                chatbox_id = chatBoxes[x];
-
-                if ($("#chatbox_" + chatbox_id).css('display') != 'none') {
-                    if (align == 0) {
-                        $("#chatbox_" + chatbox_id).css('right', '20px');
-                    } else {
-                        width = (align) * (280 + 7) + 20;
-                        $("#chatbox_" + chatbox_id).css('right', width + 'px');
-                    }
-                    align++;
-                }
-            }
-
         },
 
         /**
