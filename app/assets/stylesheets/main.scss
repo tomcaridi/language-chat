@@ -41,13 +41,13 @@ html,body {
 	margin-top: 10px;
 }
 
-.left {
+.dashboard {
 	float: left;
 	width: 33%;
 	margin-top: 10px;
 }
 
-.right {
+.chat-container {
 	float: right;
 	width: 66%;
 	margin-top: 10px;
@@ -94,6 +94,7 @@ html,body {
 		margin-top: 5px;
 		padding-top: 10px;
 		text-decoration: none;
+		text-align: center;
 		font-size: 0.9em;
 	}
 
@@ -208,7 +209,7 @@ html,body {
 }
 
 @media all and (max-width: 980px) {
-	.left {
+	.dashboard {
 		margin-top: 10px;
 		width: 100%;
 		float: left;
@@ -241,7 +242,7 @@ html,body {
 		margin-top: 0px;
 	}
 
-	.right {
+	.chat-container {
 		margin-top: 10px;
 		float: left;
 		width: 100%;
@@ -258,7 +259,7 @@ html,body {
 		display: none;
 	}
 
-	.left {
+	.dashboard {
 		margin-top: 10px;
 		width: 100%;
 		float: left;
@@ -292,7 +293,7 @@ html,body {
 	}
 
 
-	.right {
+	.chat-container {
 		float: left;
 		width: 100%;
 		background-color: white;
