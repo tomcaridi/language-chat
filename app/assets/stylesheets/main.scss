@@ -101,11 +101,15 @@ html,body {
 	.start-open-chat {
 		padding-top: 5px;
 	}
+
+	p {
+		margin-left: 10px;
+		margin-right: 10px;
+	}
 }
 
 .chat-window {
 	height: 500px;
-	overflow: scroll;
 	background-color: white;
 	-moz-border-radius: 0px;
 	-webkit-border-radius: 0px 0px 3px 3px;
@@ -159,6 +163,30 @@ html,body {
 	margin: 0 auto;
 	overflow: scroll;
 }
+.chatboxmessagecontent {
+    background: white;
+    padding: 10px;
+    border-radius: 2px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.chatboxmessagecontent p {
+    font-size: 14px;
+    margin: 0 0 0.2rem 0;
+    -ms-word-break: break-all;
+
+/*     Non standard for webkit */
+    word-break: break-word;
+
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
+}
+
+.chatboxmessagecontent time {
+    font-weight: bold;
+}
+
 .input-container {
 	width: 100%;
 	height: 45px;
