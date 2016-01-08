@@ -7,7 +7,7 @@
       <div class="user-list-wrapper">
         <div class="avatar"></div>
         <div class="username"><%= user.name %></div>
-        <div><%= link_to "Send Message", "#", class: "start-chat-btn", "data-sid" => current_user.id, "data-rip" => user.id %>
+        <div><%= link_to "Send Message", new_conversation_path, class: "start-chat-btn", "data-sid" => current_user.id, "data-rip" => user.id %>
         </div>
         <div class="clear"></div>
       </div>
@@ -22,7 +22,7 @@
           <% @conversations.each do |conversation| %>
             <div class="avatar"></div>
             <div class="username"><%= conversation_interlocutor(conversation).name %></div>
-            <div><%= link_to "Open Chat", conversation_path(conversation), remote: true, class: "start-chat-btn", "data-cid" => conversation.id %>
+            <div><%= link_to "Open Chat", conversation_path(conversation), class: "start-chat-btn", "data-cid" => conversation.id %>
             </div>
             <div class="clear"></div>
         </div>

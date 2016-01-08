@@ -12,3 +12,12 @@ class User < ActiveRecord::Base
 
   has_many :converations, foreign_key: :sender_id
 end
+
+class LanguagePreference
+	include ActiveModel::Model
+
+	attr_accessor :native_id, :desired_id
+
+	def save
+		current_user.desired_languages << Di
+		Desired.new
