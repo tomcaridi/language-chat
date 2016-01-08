@@ -1,8 +1,6 @@
 <% publish_to @path do %>
 
-$(".message-container").append("<%= j render( partial: @message ) %>");
-$(".new_message")[0].reset();
-console.log("hello")
-$(".message-container").scrollTop((".message-container")[0].scrollHeight);
+	$(".message-container").append("<%= j render( partial: @message ) %>");
+	$(".message-container").scrollTop(function() { return this.scrollHeight; });
 
 <% end %>
