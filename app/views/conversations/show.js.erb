@@ -1,7 +1,0 @@
-$(".container").append("<%= escape_javascript(render 'show') %>");
-
-$(".start-chat-btn").click(function (selected) {
-	console.log("hello");
-	$(".current").hide().removeClass("current");
-	$("<%= escape_javascript(render 'show') %>").show("normal").addClass("current");
-});
