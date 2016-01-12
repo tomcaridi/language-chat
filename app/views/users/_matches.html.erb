@@ -2,18 +2,12 @@
     <div class="title-text">Matched Users</div>
 </div>
 <div class="matches">
-    <% @users.each do |user| %>
-      <div class="user-list-wrapper">
-        <div class="avatar"></div>
-        <% if user_signed_in? %>
-        <i class="fa fa-circle"></i> 
-        <% else %>
-        <i class="fa fa-dot-circle-o"></i>
-        <% end %>
-        <div class="username"><%= user.name %></div>
-        <div><%= link_to "Send Message", conversations_path(recipient_id: user.id), method: :post, class: "start-chat-btn" %>
-        </div>
-        <div class="clear"></div>
-      </div>
-    <% end %>
+  <% @users.each do |user| %>
+    <div class="user-list-wrapper">
+      <div class="avatar"></div>
+      <div class="username"><%= user.name %></div>
+      <div><%= link_to "Send Message", conversations_path(recipient_id: user.id), method: :post, class: "start-chat-btn" %></div>
+      <div class="clear"></div>
+    </div>
+  <% end %>
 </div>

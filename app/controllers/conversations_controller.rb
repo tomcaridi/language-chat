@@ -8,6 +8,7 @@ class ConversationsController < ApplicationController
 	  else 
 	    redirect_to root_path, alert: "There was an issue"
 	  end
+	end
 
 	def show
 	  @conversation = Conversation.find(params[:id])

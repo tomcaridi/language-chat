@@ -11,12 +11,4 @@ class User < ActiveRecord::Base
   has_many :desired_languages, through: :desireds, source: :language
 
   has_many :conversations, foreign_key: :sender_id
-
-class LanguagePreference
-	include ActiveModel::Model
-
-	attr_accessor :native_id, :desired_id
-
-	def save
-		current_user.desired_languages << Di
-		Desired.new
+end
