@@ -1,14 +1,23 @@
 class ConversationsController < ApplicationController
 	before_filter :authenticate_user!
-	# layout false
-	def create
-	  if Conversation.between(params[:sender_id],params[:recipient_id]).present?
-	  	@conversation = Conversation.between(params[:sender_id],params[:recipeient_id]).first
-	  else
-	  	@conversation = Conversation.create!(conversation_params)
-	  end
+	def new
+	  @conversation = Conversation.new
+	end
 
-	  render json: { conversation_id: @conversation.id }
+	def create
+	  @conversation = Conversation.new(conversation_params)
+	  if @conversation.save
+	  	redirect_to conversation_path(@conversation.id)
+	  else 
+	    redirect_to root_path
+	  end
+	  # if Conversation.between(params[:sender_id],params[:recipient_id]).present?
+	  # 	@conversation = Conversation.between(params[:sender_id],params[:recipient_id]).first
+	  # else
+	  # 	@conversation = Conversation.create!(conversation_params)
+	  # 	redirect_to conversation_path(@conversation.id)
+	  # end
+	  # render json: { conversation_id: @conversation.id }
 	end
 
 	def show
