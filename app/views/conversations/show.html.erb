@@ -1,3 +1,7 @@
+<div class="dashboard">
+  <%= render '/users/matches' %>
+  <%= render '/users/previous' %>
+</div>
 <div class="chat-container">
     <div class="chat-box-title">
       <div class="title-text"><%= @receiver.name %></div>
@@ -18,5 +22,15 @@
     </div>
       <% end %>
 </div>
-
 <%= subscribe_to conversation_path(@conversation) %>
+<div class="clear"></div>
+
+<script>
+    $(".message-container").scrollTop(function() { return this.scrollHeight; });
+
+    $('.textbox').keydown(function(event){    
+        if(event.keyCode==13){
+            $('.send-btn').submit();
+        }
+    });
+</script>

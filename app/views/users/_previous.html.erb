@@ -1,0 +1,17 @@
+<div class="previous-chats-title">
+  <div class="title-text">Previous Chats</div>
+</div>
+<div class="chatlist">
+  <% if @conversations.any? %>
+    <div class="user-list-wrapper">
+      <% @conversations.each do |conversation| %>
+      <div class="avatar"></div>
+      <div class="username"><%= conversation_interlocutor(conversation).name %></div>
+      <div><%= link_to "Open Chat", conversation_path(conversation), class: "start-chat-btn", "data-cid" => conversation.id %></div>
+      <div class="clear"></div>
+    </div>
+  <% end %>
+  <% else %>
+    <p>No conversations yet. Send a message to any matched user to start chatting!</p>
+  <% end %>
+</div>

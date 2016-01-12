@@ -1,31 +1,29 @@
 class ConversationsController < ApplicationController
 	before_filter :authenticate_user!
 
-	def new
-		@conversation = Conversation.new
-		# @conversation = current_user.conversation.build
-	end
-
 	def create
-	  if Conversation.between(params[:sender_id],params[:recipient_id]).present?
-	  	@conversation = Conversation.between(params[:sender_id],params[:recipient_id]).first
-	  else
-	  	@conversation = Conversation.create!(conversation_params)
-	  	redirect_to conversation_path(conversation.id)
+	  @conversation = find_conversation
+	  if @conversation.save
+	  	redirect_to conversation_path(@conversation.id)
+	  else 
+	    redirect_to root_path, alert: "There was an issue"
 	  end
-	  render json: { conversation_id: @conversation.id }
-	end
 
 	def show
 	  @conversation = Conversation.find(params[:id])
 	  @receiver = interlocutor(@conversation)
 	  @messages = @conversation.messages
 	  @message = Message.new
+	  desired_languages = current_user.desired_languages
+	  native_languages = current_user.native_languages
+	  @users = User.where(id: Native.select(:user_id).where(language: desired_languages)).where(id: Desired.select(:user_id).where(language: native_languages))
+	  @conversations = Conversation.involving(current_user)
 	end
 
 	private
-	def conversation_params
-	  params.permit(:sender_id, :recipient_id)
+
+	def find_conversation
+	  current_user.conversations.find_or_initialize_by(recipient_id: params[:recipient_id])
 	end
 
 	def interlocutor(conversation)
