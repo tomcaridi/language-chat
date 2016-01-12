@@ -5,8 +5,13 @@
     <% @users.each do |user| %>
       <div class="user-list-wrapper">
         <div class="avatar"></div>
+        <% if user_signed_in? %>
+        <i class="fa fa-circle"></i> 
+        <% else %>
+        <i class="fa fa-dot-circle-o"></i>
+        <% end %>
         <div class="username"><%= user.name %></div>
-        <div><%= link_to "Send Message", conversations_path, method: :post, class: "start-chat-btn" %>
+        <div><%= link_to "Send Message", conversations_path(recipient_id: user.id), method: :post, class: "start-chat-btn" %>
         </div>
         <div class="clear"></div>
       </div>

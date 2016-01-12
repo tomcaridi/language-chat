@@ -10,5 +10,5 @@ class User < ActiveRecord::Base
   has_many :desireds
   has_many :desired_languages, through: :desireds, source: :language
 
-  has_many :converations, foreign_key: :sender_id
+  has_many :conversations, foreign_key: :sender_id
 end
