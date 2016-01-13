@@ -6,8 +6,7 @@ class UsersController < ApplicationController
     @conversations = Conversation.involving(current_user)
   end
 
-private
-
+  private
   def matched
     desired_languages = current_user.desired_languages
     native_languages = current_user.native_languages
