@@ -3,7 +3,7 @@ class RegistrationsController < Devise::RegistrationsController
   protected
 
   def after_sign_up_path_for(resource)
-    '/languages' # Or :prefix_to_your_route
+    '/languages'
   end
 
   private
