@@ -10,12 +10,12 @@ html,body {
 }
 
 .notice {
-	width: 270px;
     text-align: center;
     border-radius: 2px;
     margin-left: 30px;
-    background-color: #EDEDED;
-    color: #26A69A;
+    margin-top: -10px;
+    background-color: transparent;
+    color: green;
     font-size: 0.9em;
     position: absolute;
 }
@@ -119,13 +119,13 @@ html,body {
 	    margin-right: 30px;
 	    margin-top: -33px;
 	    cursor: pointer;
-	    -webkit-user-select: none;
-	    -moz-user-select: none;
-	    -ms-user-select: none;
-	    user-select: none;
-	    -webkit-tap-highlight-color: transparent;
-	    will-change: opacity, transform;
-	    transition: all 0.3s ease-out;
+	    // -webkit-user-select: none;
+	    // -moz-user-select: none;
+	    // -ms-user-select: none;
+	    // user-select: none;
+	    // -webkit-tap-highlight-color: transparent;
+	    // will-change: opacity, transform;
+	    // transition: all 0.3s ease-out;
 	    a {
 	    	color:#fc5645;;
 	    }
@@ -135,6 +135,7 @@ html,body {
 		margin-top: 75px;
 		text-align: center;
 		color: #3f3a3a;
+		font-size: 3em;
 	}
 }
 
@@ -150,6 +151,7 @@ html,body {
 	h3 {
 		text-align: center;
 		color: #3f3a3a;
+		font-size: 2em;
 	}
 	p {
 		text-align: center;
@@ -198,9 +200,10 @@ html,body {
 }
 
 .chat-container {
-	float: right;
-	width: 66%;
+	float: left;
+	width: 62.5%;
 	margin-top: 10px;
+	margin-left: 10px;
 }
 
 .matches, .chatlist {
@@ -242,7 +245,7 @@ html,body {
 		float: right;
 		margin-right: 15px;
 		margin-top: 5px;
-		padding-top: 10px;
+		padding-top: 5px;
 		text-decoration: none;
 		text-align: center;
 		font-size: 0.9em;
@@ -422,8 +425,9 @@ html,body {
 
 	.chat-container {
 		margin-top: 10px;
+		margin-left: 22px;
 		float: left;
-		width: 100%;
+		width: 95%;
 	}
 
 	.chat-window {
@@ -471,7 +475,8 @@ html,body {
 
 	.chat-container {
 		float: left;
-		width: 100%;
+		width: 95%;
+		margin-left: 10px;
 		background-color: white;
 	}
 

@@ -10,6 +10,7 @@
   <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
   <title>squillo</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -25,8 +26,8 @@
     <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
   <% else %>
     <li><a href="/#info-section">About</a></li>
-    <li><%= link_to "Sign up", new_user_registration_path %></li>
-    <li><%= link_to "Login", new_user_session_path %></li>
+    <li><%= link_to '<a class="waves-effect waves-light modal-trigger" href="#sign-up">Sign Up</a>'.html_safe, new_user_registration_path %></li>
+    <li><%= link_to '<a class="waves-effect waves-light modal-trigger" href="#sign-in">Sign In</a>'.html_safe, new_user_session_path %></li>
   <% end %>
   </ul>
 </div>
@@ -43,3 +44,4 @@
 <!-- <audio id="chatAudio"><source src="/sounds/notification.mp3" type="audio/mpeg"></audio> -->
 </body>
 </html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>

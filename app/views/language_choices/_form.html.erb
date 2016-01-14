@@ -1,9 +1,15 @@
 <%= form_tag languages_path, method: :post do %>
 <div class="field">
 <h2>What are your native languages?</h2>
-<% for language in @languages %>
-	<%= check_box_tag "natives[]", language.id%>
-	<%= label_tag language.name%>
+	<div class="input-field">
+		<div class="select-wrapper">
+			<div class="dropdown-content select-dropdown multiple-select-dropdown active">
+				<% for language in @languages %>
+				<%= check_box_tag "natives[]", language.id%>
+				<%= label_tag language.name%>
+			</div>
+		</div>
+	</div>
 <%end %>
 <h2>What languages are you are learning?</h2>
 <% for language in @languages %>

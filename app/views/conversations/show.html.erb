@@ -1,3 +1,4 @@
+
 <div class="page-container">
   <div class="dashboard">
     <%= render '/users/matches' %>
@@ -24,8 +25,8 @@
         <% end %>
   </div>
   <%= subscribe_to conversation_path(@conversation) %>
-  <div class="clear"></div>
 </div>
+<div class="clear"></div>
 <script>
     $(".message-container").scrollTop(function() { return this.scrollHeight; });
     $('.textbox').keydown(function(event){    
@@ -34,4 +35,4 @@
             $('.textbox').val("");
         }
     });
-</script>
+</script> 
