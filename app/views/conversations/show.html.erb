@@ -1,30 +1,31 @@
-<div class="dashboard">
-  <%= render '/users/matches' %>
-  <%= render '/users/previous' %>
-</div>
-<div class="chat-container">
-    <div class="chat-box-title">
-      <div class="title-text"><%= @receiver.name %></div>
-    </div>
-  <div class="chat-window">
-    <div class="message-container">
-    <% if @messages.any? %>
-        <%= render @messages %>
-    <% end %>
-    </div>
-    <div class="input-container">
-      <%= form_for([@conversation, @message], :remote => true, :html => { id: "conversation_form_#{@conversation.id}"}) do |f| %>
-      <div class="inner-wrapper">
-        <div><%= f.text_area :body, class: "textbox", "data-cid" => @conversation.id %></div>
-        <div><%= f.submit "SEND", class: "send-btn"%></div>
-        <div class="clear"></div>
+<div class="page-container">
+  <div class="dashboard">
+    <%= render '/users/matches' %>
+    <%= render '/users/previous' %>
+  </div>
+  <div class="chat-container">
+      <div class="chat-box-title">
+        <div class="title-text"><%= @receiver.name %></div>
       </div>
-    </div>
+    <div class="chat-window">
+      <div class="message-container">
+      <% if @messages.any? %>
+          <%= render @messages %>
       <% end %>
+      </div>
+      <div class="input-container">
+        <%= form_for([@conversation, @message], :remote => true, :html => { id: "conversation_form_#{@conversation.id}"}) do |f| %>
+        <div class="inner-wrapper">
+          <div><%= f.text_area :body, class: "textbox", "data-cid" => @conversation.id %></div>
+          <div><%= f.submit "SEND", class: "send-btn"%></div>
+          <div class="clear"></div>
+        </div>
+      </div>
+        <% end %>
+  </div>
+  <%= subscribe_to conversation_path(@conversation) %>
+  <div class="clear"></div>
 </div>
-<%= subscribe_to conversation_path(@conversation) %>
-<div class="clear"></div>
-
 <script>
     $(".message-container").scrollTop(function() { return this.scrollHeight; });
     $('.textbox').keydown(function(event){    

@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: 'registrations' }
-  
-  root 'home#homepage'
-  
+
   authenticated :user do
-    get "/" => 'users#index'
+    root 'users#index', as: :authenticated_root
   end
+
+  root 'home#homepage'
 
   get "/languages" => "language_choices#new"
   post "/languages" => "language_choices#create"
