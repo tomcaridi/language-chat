@@ -1,6 +1,6 @@
 == README
 
-Squillo is a websockets-powered chat application for connecting users who want to learn each others' languages. The idea is simple: a user signs up, chooses their native language(s) and the languages they want to practice, see who they've matched with, and start chatting instantly.
+Squillo is a websockets-powered chat application for connecting users who want to learn each others' languages. The idea is simple: a user signs up, chooses their native language(s) and the languages they want to practice, sees who they've matched with, and can start chatting with them instantly.
 
 Built with:
 
