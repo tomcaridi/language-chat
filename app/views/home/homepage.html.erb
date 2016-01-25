@@ -11,7 +11,7 @@
         <div class="info-box">
             <div class="icon"><i class="fa fa-pencil-square-o fa-5x"></i></div>
             <h3>Sign Up</h3>
-            <p>Create an account <a href="/users/sign_up">here</a> with just your name, email, and password.</p>
+            <p>Create an account <%= link_to '<a class="modal-trigger" href="#sign-up">here</a>'.html_safe, new_user_registration_path %> with just your name, email, and password.</p>
         </div>
         <div class="info-box">
             <div class="icon"><i class="fa fa-globe fa-5x"></i></div>

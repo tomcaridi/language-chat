@@ -1,21 +1,20 @@
-<%= form_tag languages_path, method: :post do %>
-<div class="field">
-<h2>What are your native languages?</h2>
-	<div class="input-field">
-		<div class="select-wrapper">
-			<div class="dropdown-content select-dropdown multiple-select-dropdown active">
+<div class="edit-container">
+	<%= form_tag languages_path, method: :post do %>
+	<h3>What are your native languages?</h3>
+		<div class="input-field col s12">
+		    <select multiple>
+		      	<option value="" disabled selected>Choose your language</option>
 				<% for language in @languages %>
-				<%= check_box_tag "natives[]", language.id%>
-				<%= label_tag language.name%>
-			</div>
+				  <option value="1"><%= select_tag "natives[]", language.id%><%= label_tag language.name%></option>
+			</select>
+<!-- 			<label>Materialize Multiple Select</label> -->
 		</div>
-	</div>
-<%end %>
-<h2>What languages are you are learning?</h2>
-<% for language in @languages %>
-	<%= check_box_tag "desireds[]", language.id%>
-	<%= label_tag language.name%>
-<%end %>
-  <%= submit_tag "Submit" %>
+		<%end %>
+	<h3>What languages are you are learning?</h3>
+	<% for language in @languages %>
+		<%= check_box_tag "desireds[]", language.id%>
+		<%= label_tag language.name%>
+	<%end %>
+	  <%= submit_tag "Submit" %>
 </div>
 <% end %>

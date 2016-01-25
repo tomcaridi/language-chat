@@ -5,10 +5,9 @@
   <% if @conversations.any? %>
     <div class="user-list-wrapper">
       <% @conversations.each do |conversation| %>
-      <div class="avatar"></div>
+      <div class="avatar"><i class="fa fa-user fa-2x"></i></div>
       <div class="username"><%= conversation_interlocutor(conversation).name %></div>
       <div><%= link_to "Open Chat", conversation_path(conversation), class: "start-chat-btn", "data-cid" => conversation.id %></div>
-      <div class="clear"></div>
     </div>
   <% end %>
   <% else %>

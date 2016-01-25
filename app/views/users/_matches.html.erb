@@ -4,7 +4,7 @@
 <div class="matches">
   <% @users.each do |user| %>
     <div class="user-list-wrapper">
-      <div class="avatar"></div>
+      <div class="avatar"><i class="fa fa-user fa-2x"></i></div>
       <div class="username"><%= user.name %></div>
       <div><%= link_to "Send Message", conversations_path(recipient_id: user.id), method: :post, class: "start-chat-btn" %></div>
       <div class="clear"></div>

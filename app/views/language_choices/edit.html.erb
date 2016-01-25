@@ -1,16 +1,18 @@
-<h5>Edit Language Settings</h5>
-<%= form_tag languages_path, method: :put do %>
-<div class="field">
-<h2>What are your native languages?</h2>
-<% for language in @languages %>
-	<%= check_box_tag "natives[]", language.id%>
-	<%= label_tag language.name%>
-<%end %>
-<h2>What languages are you are learning?</h2>
-<% for language in @languages %>
-	<%= check_box_tag "desireds[]", language.id%>
-	<%= label_tag language.name%>
-<%end %>
-  <%= submit_tag "Submit" %>
+<div class="edit-container">
+	<h3>Edit Language Settings</h3>
+	<%= form_tag languages_path, method: :put do %>
+	<div class="field">
+	<h5>What are your native languages?</h5>
+	<% for language in @languages %>
+		<%= check_box_tag "natives[]", language.id%>
+		<%= label_tag language.name%>
+	<%end %>
+	<h5>What languages are you are learning?</h5>
+	<% for language in @languages %>
+		<%= check_box_tag "desireds[]", language.id%>
+		<%= label_tag language.name%>
+	<%end %>
+	  <%= submit_tag "Submit" %>
+	</div>
+	<% end %>
 </div>
-<% end %>
