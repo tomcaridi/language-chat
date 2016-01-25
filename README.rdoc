@@ -9,6 +9,3 @@ Built with:
 * Rails 4.2.4
 
 * Private_Pub gem (allows you to publish/subscribe to private channels over Faye server)
-
-
-<tt>rake doc:app</tt>.
