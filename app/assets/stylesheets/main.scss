@@ -16,7 +16,7 @@ html,body {
 
 .notice {
     margin-left: 30px;
-    margin-top: -10px;
+    margin-top: -7px;
     background-color: transparent;
     color: green;
     font-size: 0.9em;
@@ -25,7 +25,7 @@ html,body {
 
 .alert {
 	margin-left: 30px;
-    margin-top: -10px;
+    margin-top: -7px;
     background-color: transparent;
     color: red;
     font-size: 0.9em;
@@ -258,10 +258,9 @@ html,body {
 }
 
 .chat-container {
-	float: left;
-	width: 62.5%;
+	float: right;
+	width: 66%;
 	margin-top: 10px;
-	margin-left: 10px;
 }
 
 .chat-window {
@@ -484,8 +483,7 @@ html,body {
 
 	.chat-container {
 		float: left;
-		width: 95%;
-		margin-left: 10px;
+		width: 100%;
 		background-color: white;
 	}
 
